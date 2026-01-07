@@ -6,9 +6,11 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 22:16:28 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/05 22:32:06 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/07 22:52:10 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef	WHATEVER_HPP
 #define	WHATEVER_HPP
