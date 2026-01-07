@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 21:06:15 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/07 22:14:09 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/07 22:32:51 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 //Canonical form of the template
 
 template< typename T, typename U >
-Array<T, U>::Array( void ) : array(new T()), size(0) {
+Array<T, U>::Array( void ) : array(new T()), _size(0) {
 	std::cout << "Default Array constructor called" << std::endl;
 	return ;
 };
 
 template<typename T, typename U >
-Array<T, U>::Array( unsigned int n ) : array(new T[n]), size(n) {
+Array<T, U>::Array( unsigned int n ) : array(new T[n]), _size(n) {
 	std::cout << "Specific Array constructor called" << std::endl;
 }
 
@@ -31,8 +31,8 @@ Array<T, U>::Array( Array & src ) {
 	if (!src.array)
 		this->array = NULL;
 	else {
-		U len = src.getSize();
-		this->size = len;
+		U len = src.size();
+		this->_size = len;
 		this->array = new T[len];
 		for (U i = 0; i < len; i++) {
 			this->array[i] = src.array[i];
@@ -44,8 +44,8 @@ template< typename T, typename U >
 Array<T, U> & Array<T, U>::operator=( Array & other ) {
 	std::cout << "Array operator assignment called" << std::endl;
 	if (this != &other) {
-		U len = other.getSize();
-		this->size = len;
+		U len = other.size();
+		this->_size = len;
 		delete[] array;
 		array = new T[len];
 		for (U i = 0; i < len; i++) {
@@ -68,12 +68,12 @@ Array<T, U>::~Array( void ) {
 
 template< typename T, typename U >
 T & Array<T, U>::operator[](U index) {
-	if (index >= size)
+	if (index >= _size)
 		throw std::exception();
 	return ( array[index] );
 };
 
 template< typename T, typename U >
-U Array<T, U>::getSize( void ) {
-	return ( this->size );
+U Array<T, U>::size( void ) {
+	return ( this->_size );
 };
