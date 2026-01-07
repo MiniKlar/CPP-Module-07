@@ -6,9 +6,11 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:22:17 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/07 21:52:42 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/07 22:51:55 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef	ARRAY_HPP
 #define ARRAY_HPP
@@ -20,7 +22,7 @@ class Array
 {
 	private:
 		T * 	array;
-		U	size;
+		U		_size;
 	public:
 		Array( void );
 		Array( unsigned int n );
@@ -28,7 +30,7 @@ class Array
 		Array & operator=( Array & other );
 		~Array( void );
 		T & operator[]( U index );
-		U getSize( void );
+		U size( void );
 };
 
 #include "Array.tpp"
