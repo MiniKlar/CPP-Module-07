@@ -6,27 +6,11 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 22:39:06 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/07 22:57:49 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/15 19:56:31 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-
-// void f(std::string & str) {
-// 	std::cout << "str function called: " << str << std::endl;
-// }
-
-// void f(const std::string & str) {
-// 	std::cout << "Const str function called: " << str << std::endl;
-// }
-
-// void ff(const size_t & i) {
-// 	std:: cout << "const i function called : " << i << std::endl;
-// }
-
-// void ff(size_t & i) {
-// 	std:: cout << "i function called : " << i << std::endl;
-// }
 
 int	main( void )
 {
@@ -38,3 +22,4 @@ int	main( void )
 
 	return (0);
 }
+
