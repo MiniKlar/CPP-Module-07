@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 21:06:15 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/07 22:32:51 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/15 20:06:02 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ Array<T, U>::Array( unsigned int n ) : array(new T[n]), _size(n) {
 template< typename T, typename U >
 Array<T, U>::Array( Array & src ) {
 	std::cout << "Array Copy constructor called" << std::endl;
-	if (!src.array)
+	if (!src.array) {
 		this->array = NULL;
+		this->_size = 0;
+	}
 	else {
 		U len = src.size();
 		this->_size = len;
@@ -43,10 +45,15 @@ Array<T, U>::Array( Array & src ) {
 template< typename T, typename U >
 Array<T, U> & Array<T, U>::operator=( Array & other ) {
 	std::cout << "Array operator assignment called" << std::endl;
+	if (!other.array) {
+		this->array = NULL;
+		this->_size = 0;
+	}
 	if (this != &other) {
 		U len = other.size();
 		this->_size = len;
-		delete[] array;
+		if (array)
+			delete[] array;
 		array = new T[len];
 		for (U i = 0; i < len; i++) {
 			this->array[i] = other.array[i];

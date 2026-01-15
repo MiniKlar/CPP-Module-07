@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:22:17 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/07 22:51:55 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/15 20:08:30 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ class Array
 		T * 	array;
 		U		_size;
 	public:
+		//canonical form
+
 		Array( void );
 		Array( unsigned int n );
 		Array( Array & src );
 		Array & operator=( Array & other );
 		~Array( void );
+
+		//member functions
 		T & operator[]( U index );
 		U size( void );
 };
